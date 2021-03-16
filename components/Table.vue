@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 
 const perPageOption = 3;
 export default {
