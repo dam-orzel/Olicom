@@ -4,7 +4,7 @@
     <h1>Olicom</h1>
   </header>
   <main class="container">
-    <Table :config="configList" :dataTable="usersList"/>
+    <Table v-if="usersList" :config="configList" :dataTable="usersList"/>
   </main>
 </section>
 </template>
@@ -25,12 +25,12 @@ export default {
           name: "Imię i nazwisko",
         },
         {
-          propKey: `email`,
+          propKey: 'email',
           name: "E-mail",
         },
         {
           dataKey: 'company',
-          propKey: `name`,
+          propKey: 'name',
           name: "Nazwa firmy",
         },
         {
@@ -48,7 +48,7 @@ export default {
   async mounted() {
     const users = await this.$axios.$get("https://jsonplaceholder.typicode.com/users")
     this.usersList = users
-    console.log(users.detail)
+    console.log(users)
   }
 }
 </script>
